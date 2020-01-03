@@ -13,12 +13,11 @@ void _pall(stack_t **h, unsigned int n)
 {
 	size_t i = 0;
 
-	(void) n;
+
 	while (*h != NULL)
 	{
-		printf("%d\n", h->n);
+		printf("%d\n", *h->n);
 		*h = (*h)->next;
 		i++;
 	}
-	return (i);
 }

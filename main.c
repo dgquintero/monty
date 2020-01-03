@@ -6,10 +6,8 @@
  */
 int main(int argc, char *argv[])
 {
-	stack_t *head;
 	char buffer[BSIZE];
-	int one, i;
-
+	int one, i, nn = 5;
 
 	if (argc != 2)
 	{dprintf(STDERR_FILENO, "USAGE: monty file\n");
@@ -25,5 +23,5 @@ int main(int argc, char *argv[])
 	{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	get_op_func(buffer);
+	pharse(buffer);
 }

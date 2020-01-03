@@ -9,11 +9,12 @@
  *
  * Return: the address of the new element.
  */
-void _push(stack_t **head, unsigned int n);
+void _push(stack_t **head, unsigned int n)
 {
 	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
+	printf("_________push______");
 	if (new == NULL)
         {dprintf(STDERR_FILENO, "Error: malloc failed\n");
                 exit(EXIT_FAILURE);

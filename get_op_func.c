@@ -4,16 +4,15 @@
  *
  *
  */
-void (*get_op_func(char *s))(stack_t, unsigned int)
+void (*get_op_func(char *s))(stack_t **h, unsigned int nn)
 {
 	int a = 0;
-	char fun;
 
 	(void) *s;
 	instruction_t ops[] = {
 		{"push", _push},
-		{"pall", _pall},
-		{"pint", _pint},
+/**		{"pall", _pall},
+		{"pint", _pint},*/
 		{NULL, NULL}
 	};
 	while (ops[a].opcode != NULL)
@@ -22,6 +21,5 @@ void (*get_op_func(char *s))(stack_t, unsigned int)
 			break;
 		a++;
 	}
-	fun = ops[a].f;
-	
+	return (ops[a].f);
 }

@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define BSIZE 1024
+#define BSIZE 5084
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,7 +37,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void (*get_op_func(char *s))(stack_t, unsigned int);
+void (*get_op_func(char *s))(stack_t **h, unsigned int nn);
 void _push(stack_t **head, unsigned int n);
 void _pall(stack_t **h, unsigned int n);
 void _pint(stack_t **h, unsigned int n);

@@ -9,7 +9,7 @@
  *
  * Return: the address of the new element.
  */
-stack_t *add_dnodeint(stack_t **head, const int n)
+void _push(stack_t **head, unsigned int n);
 {
 	stack_t *new;
 
@@ -23,5 +23,4 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	if (*head != NULL)
 		(*head)->prev = new;
 	*head = new;
-	return (*head);
 }

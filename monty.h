@@ -39,11 +39,7 @@ typedef struct instruction_s
 
 void (*get_op_func(char *s))(stack_t, unsigned int);
 void _push(stack_t **head, unsigned int n);
-stack_t *_pall(stack_t **head, const int n);
-stack_t *_pint(stack_t **head, const int n);
-stack_t *_pop(stack_t **head, const int n);
-stack_t *_swap(stack_t **head, const int n);
-stack_t *_add(stack_t **head, const int n);
-stack_t *_nop(stack_t **head, const int n);
+void _pall(stack_t **h, unsigned int n);
+void _pint(stack_t **h, unsigned int n);
 
 #endif /* _MONTY_H_ */

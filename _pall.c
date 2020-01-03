@@ -9,14 +9,15 @@
  *
  * Return: the number of notes.
  */
-void _pall(const stack_t *h)
+void _pall(stack_t **h, unsigned int n)
 {
 	size_t i = 0;
 
-	while (h != NULL)
+	(void) n;
+	while (*h != NULL)
 	{
 		printf("%d\n", h->n);
-		h = h->next;
+		*h = (*h)->next;
 		i++;
 	}
 	return (i);

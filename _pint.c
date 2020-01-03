@@ -9,13 +9,14 @@
  *
  * Return: the number of notes.
  */
-void _pint(const stack_t *h)
+void _pint(stack_t **h, unsigned int n)
 {
 	size_t i = 0;
 
-	while (h != NULL)
+	(void) n;
+	while (*h != NULL)
 	{
-		h = h->next;
+		*h = (*h)->next;
 		i++;
 	}
 	printf("%d\n", h->n);

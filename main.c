@@ -27,13 +27,3 @@ int main(int argc, char *argv[])
 	}
 	get_op_func(buffer);
 }
-/**
- *
- *
- *
- */
-void (*get_op_func(char *s))(stack_t, unsigned int)
-{
-	(void) *s;
-
-}

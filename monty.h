@@ -1,8 +1,11 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
-#include <stdlib.h>
-#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #define BSIZE 1024
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -33,5 +36,7 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void (*get_op_func(char *s))(stack_t, unsigned int);
 
 #endif /* _MONTY_H_ */

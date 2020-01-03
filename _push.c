@@ -9,26 +9,17 @@
  *
  * Return: the address of the new element.
  */
-dlistint_t *_push(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint(stack_t **head, const int n)
 {
-	dlistint_t *h;
+	stack_t *new;
 
-	h = malloc(sizeof(dlistint_t));
-	if (h == NULL)
-	{
-		free(h);
-		return (NULL);
-	}
-	h->n = n;
-	h->prev = NULL;
-	if (*head == NULL)
-	{
-		h->next = NULL;
-		*head = h;
-		return (h);
-	}
-	h->next = *head;
-	(*head)->prev = h;
-	*head = h;
-	return (h);
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+		return (0);
+	new->n = n;
+	new->next = *head;
+	if (*head != NULL)
+		(*head)->prev = new;
+	*head = new;
+	return (*head);
 }

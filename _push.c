@@ -9,13 +9,15 @@
  *
  * Return: the address of the new element.
  */
-dlistint_t *add_dnodeint(stack_t **head, const int n)
+stack_t *add_dnodeint(stack_t **head, const int n)
 {
 	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		return (0);
+        {dprintf(STDERR_FILENO, "Error: malloc failed\n");
+                exit(EXIT_FAILURE);
+        }
 	new->n = n;
 	new->next = *head;
 	if (*head != NULL)

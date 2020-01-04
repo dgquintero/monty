@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
- *
- *
- *
+ * get_op_func - Funtion.
+ * @command: command.
+ * @h: h.
+ * @count: count.
  */
 void get_op_func(char *command, stack_t **h, unsigned int count)
 {

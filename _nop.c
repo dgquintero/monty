@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include "monty.h"
 /**
- * nop - The opcode that doesn’t do anything.
+ * _nop - The opcode that doesn’t do anything.
  * @h: The stack pointer..
- * @Count: counter of the line
- * Return: None.
+ * @count: counter of the line
+ * Return: Void.
  */
 void _nop(stack_t **h, unsigned int count)
 {

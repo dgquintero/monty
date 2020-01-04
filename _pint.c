@@ -5,17 +5,16 @@
 /**
  * _pint - function that prints the last element of a list
  * @h : const - list_t
- *
- *
+ * @count: count.
  * Return: the number of notes.
  */
 void _pint(stack_t **h, unsigned int count)
 {
 
 	if (h == NULL)
-        {dprintf(STDERR_FILENO, "L%d: error\n", count);
-                exit(EXIT_FAILURE);
-        }
+	{dprintf(STDERR_FILENO, "L%d: error\n", count);
+		exit(EXIT_FAILURE);
+	}
 	while (*h != NULL)
 	{
 		*h = (*h)->next;

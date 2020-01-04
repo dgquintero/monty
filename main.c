@@ -2,7 +2,7 @@
 /**
  * main - Main funtion.
  * @argc: Argc.
- * @argv: Argv.
+ * @av: Argv.
  * Return: 0.
  */
 int main(int argc, char *av[])

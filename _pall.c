@@ -5,8 +5,7 @@
 /**
  *  _pall - function that prints all the elements of a dlist
  * @h : const - list_t
- *
- *
+ * @count: count.
  * Return: the number of notes.
  */
 void _pall(stack_t **h, unsigned int count)
@@ -15,8 +14,8 @@ void _pall(stack_t **h, unsigned int count)
 
 	if (h == NULL)
 	{dprintf(STDERR_FILENO, "L%d: error\n", count);
-                exit(EXIT_FAILURE);
-        }
+		exit(EXIT_FAILURE);
+	}
 	while (temp)
 	{
 		printf("%d\n", temp->n);

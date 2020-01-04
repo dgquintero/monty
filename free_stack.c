@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  *free_stack - Funtion that frees a list.
- * @head: Head of the list.
+ * @h: Head of the list.
  * Return: Void.
  */
 void free_stack(stack_t *h)

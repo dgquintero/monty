@@ -5,7 +5,7 @@
  * @h: h.
  * @count: count.
  */
-void get_op_func(char **command, stack_t **h, unsigned int count)
+void get_op_func(char *command, stack_t **h, unsigned int count)
 {
 	int i = 0;
 
@@ -18,19 +18,19 @@ void get_op_func(char **command, stack_t **h, unsigned int count)
 		{"nop", _nop},
 		{NULL, NULL}
 	};
-	for (i = 0; op[i].opcode; i++)
+
+	while (op[i].opcode)
 	{
-		if (!(strcmp(op[i].opcode, command[0])))
+		if ((strcmp(op[i].opcode, command)) == 0)
 		{
-			if (!strcmp(command[0], "push"))
-				num = atoi(command[1]);
 			op[i].f(h, count);
 			break;
 		}
+		i++;
 	}
 	if (op[i].f == NULL)
 	{
-		printf("L%d: unknown instruction %s\n", count, command[0]);
+		printf("L%d: unknown instruction %s\n", count, command);
 		exit(EXIT_FAILURE);
 	}
 }

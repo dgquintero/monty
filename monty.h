@@ -8,7 +8,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
-extern int num;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,7 +39,26 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void get_op_func(char **command, stack_t **h, unsigned int count);
+/**
+ * struct monty_val - take the data, buffer and file to export
+ * @data: Tokenized data
+ * @buf: buffer to getline
+ * @fil: file descriptor to open and close
+ *
+ * Description: data, buffer and file to export
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
+typedef struct global
+{
+	int num;
+	char *buffer;
+	FILE *file;
+} ss;
+
+extern ss sup;
+
+void pharser(char *buffer, stack_t **h, unsigned int count);
+void get_op_func(char *command, stack_t **h, unsigned int count);
 void _push(stack_t **head, unsigned int count);
 void free_stack(stack_t **h);
 void _add(stack_t **h, unsigned int count);
@@ -47,7 +66,6 @@ void _pall(stack_t **h, unsigned int count);
 void _pint(stack_t **h, unsigned int count);
 void _pop(stack_t **h, unsigned int count);
 void _nop(stack_t **h, unsigned int count);
-char **pharser(char *buffer);
 char *strcp(char *str);
 
 #endif /* _MONTY_H_ */

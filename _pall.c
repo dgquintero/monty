@@ -14,7 +14,7 @@ void _pall(stack_t **h, unsigned int count)
 
 	(void) count;
 
-	temp = *stack;
+	temp = *h;
 	for (; temp; temp = temp->next)
 		printf("%d\n", temp->n);
 }

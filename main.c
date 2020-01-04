@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	ssize_t chr;
 	size_t bsize = 0;
-	int count = 0;
+	unsigned int count = 0;
 	FILE *one;
 	char *buffer = NULL, **token;
 	stack_t **head = NULL;
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	one = fopen(argv[1], "r");
-	if (one == NULL)
+	if (!one)
 	{dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
@@ -35,5 +35,5 @@ int main(int argc, char *argv[])
 	free(head);
 	free(buffer);
 	fclose(one);
-	return (0);
+	exit(EXIT_SUCCESS);
 }

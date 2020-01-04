@@ -8,12 +8,11 @@
 
 void pharser(char *buffer, stack_t **h, unsigned int count)
 {
-	char *tok, *token;
+	char *str, *token;
 
-	tok = strtok(buffer, " \n\t");
+	str = strtok(buffer, " \n\t");
 	token = strtok(NULL, " \n\t");
-	if (token)
-		sup.num = atoi(token);
-	if (tok)
-		get_op_func(tok, h, count);
+	sup.num = token;
+	if (str && str[0] != '#')
+		get_op_func(h, count, str);
 }

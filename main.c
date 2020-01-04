@@ -1,5 +1,5 @@
 #include "monty.h"
-ss sup = {0, NULL, NULL};
+ss sup = {NULL, NULL, NULL};
 /**
  * main - Main funtion.
  * @argc: Argc.
@@ -22,10 +22,11 @@ int main(int argc, char *argv[])
 	{dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((chr = getline(&sup.buffer, &bsize, sup.file)) != -1)
+	while ((chr = getline(&sup.buffer, &bsize, sup.file)) != EOF)
 	{
 		count++;
 		pharser(sup.buffer, &head, count);
 	}
+	free_stack(head);
 	exit(EXIT_SUCCESS);
 }

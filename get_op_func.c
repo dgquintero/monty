@@ -5,7 +5,7 @@
  * @h: h.
  * @count: count.
  */
-void get_op_func(char *command, stack_t **h, unsigned int count)
+void get_op_func(stack_t **h, unsigned int count, char *command)
 {
 	int i = 0;
 

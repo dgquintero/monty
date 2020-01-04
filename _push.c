@@ -20,7 +20,7 @@ void _push(stack_t **h, unsigned int count)
 		exit(EXIT_FAILURE);
 	}
 
-	new->n = sup.num;
+	new->n = atoi(sup.num);
 	new->next = *h;
 	new->prev = NULL;
 	if (*h)

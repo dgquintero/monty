@@ -48,9 +48,9 @@ typedef struct instruction_s
  * Description: data, buffer and file to export
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct global
+typedef struct monty_val
 {
-	int num;
+	char *num;
 	char *buffer;
 	FILE *file;
 } ss;
@@ -58,14 +58,13 @@ typedef struct global
 extern ss sup;
 
 void pharser(char *buffer, stack_t **h, unsigned int count);
-void get_op_func(char *command, stack_t **h, unsigned int count);
+void get_op_func(stack_t **h, unsigned int count, char *command);
 void _push(stack_t **head, unsigned int count);
-void free_stack(stack_t **h);
+void free_stack(stack_t *h);
 void _add(stack_t **h, unsigned int count);
 void _pall(stack_t **h, unsigned int count);
 void _pint(stack_t **h, unsigned int count);
 void _pop(stack_t **h, unsigned int count);
 void _nop(stack_t **h, unsigned int count);
-char *strcp(char *str);
 
 #endif /* _MONTY_H_ */

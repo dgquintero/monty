@@ -4,17 +4,16 @@
  * @head: Head of the list.
  * Return: Void.
  */
-void free_stack(stack_t **h)
+void free_stack(stack_t *h)
 {
 	stack_t *head;
 
-	head = *h;
-	if (!head)
-		return;
-	while (head->next)
+	while (h != NULL)
 	{
-		head = head->next;
-		free(head->prev);
+		head = h->next;
+		free(h);
+		h = head;
 	}
-	free(head);
+	fclose(sup.file);
+	free(sup.buffer);
 }

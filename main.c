@@ -11,9 +11,10 @@ int main(int argc, char *argv[])
 	unsigned int count = 0;
 	FILE *one;
 	char *buffer = NULL, **token;
-	stack_t *head = NULL;
+	stack_t **head = NULL;
 
-	(void) head;
+	head = malloc(sizeof(stack_t));
+	*head = '\0';
 	if (argc != 2)
 	{dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
@@ -26,10 +27,11 @@ int main(int argc, char *argv[])
 	while (getline(&buffer, &bsize, one) != -1)
 	{
 		token = pharser(buffer);
-		get_op_func(token, &head, count);
 		count++;
+		get_op_func(token, head, count);
 	}
-	fclose(one);
+	free(head);
 	free(buffer);
+	fclose(one);
 	return (0);
 }

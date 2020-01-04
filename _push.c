@@ -10,21 +10,39 @@ int num;
  *
  * Return: the address of the new element.
  */
-void _push(stack_t **head, unsigned int count)
+void _push(stack_t **h, unsigned int count)
 {
 	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
+
 	(void) count;
-	if (new == NULL)
-	{dprintf(STDERR_FILENO, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+	if (!new)
+		return;
 
 	new->n = num;
-	new->next = *head;
+	new->next = *h;
 	new->prev = NULL;
-	if (*head)
-		(*head)->prev = new;
-	*head = new;
+	if (*h)
+		(*h)->prev = new;
+	*h = new;
+}
+/**
+ *free_stack - Funtion that frees a list.
+ * @head: Head of the list.
+ * Return: Void.
+ */
+void free_stack(stack_t **h)
+{
+	stack_t *temp;
+
+	if (*h == NULL || h == NULL)
+		exit(EXIT_FAILURE);
+
+	while (h != NULL)
+	{
+		temp = (*h)->next;
+		free(temp);
+		*h = temp;
+	}
 }

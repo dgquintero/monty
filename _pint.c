@@ -13,8 +13,9 @@ void _pint(stack_t **h, unsigned int count)
 	stack_t *temp;
 
 	temp = *h;
-	if (h == NULL)
-	{dprintf(STDERR_FILENO, "L%d: error\n", count);
+	if (temp == NULL)
+	{
+		printf("L%d: can't pint, stack empty\n", count);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", temp->n);

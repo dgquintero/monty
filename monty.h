@@ -1,13 +1,13 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
+#include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
+#include <errno.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#define BSIZE 5084
 extern int num;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -41,6 +41,7 @@ typedef struct instruction_s
 
 void get_op_func(char **command, stack_t **h, unsigned int count);
 void _push(stack_t **head, unsigned int count);
+void free_stack(stack_t **h);
 void _pall(stack_t **h, unsigned int count);
 void _pint(stack_t **h, unsigned int count);
 void _pop(stack_t **h, unsigned int count);

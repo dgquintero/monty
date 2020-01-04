@@ -19,13 +19,17 @@ void get_op_func(char **command, stack_t **h, unsigned int count)
 	};
 	for (i = 0; op[i].opcode; i++)
 	{
-		if (strcmp(op[i].opcode, command[0]) == 0)
+		if (!(strcmp(op[i].opcode, command[0])))
 		{
 			if (!strcmp(command[0], "push"))
 				num = atoi(command[1]);
-			op[i].f(h, count);
+			op[i].f(h, (unsigned int)count);
 			break;
 		}
 	}
-
+	if (op[i].f == NULL)
+	{
+		printf("L %d: unknown instruction %s\n", count, command[0]);
+		exit(EXIT_FAILURE);
+	}
 }

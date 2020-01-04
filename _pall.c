@@ -12,11 +12,10 @@ void _pall(stack_t **h, unsigned int count)
 {
 	stack_t *temp;
 
+	(void) count;
 	temp = *h;
-	if (h == NULL)
-	{dprintf(STDERR_FILENO, "L%d: error\n", count);
-		exit(EXIT_FAILURE);
-	}
+	if (!h)
+		return;
 	while (temp)
 	{
 		printf("%d\n", temp->n);

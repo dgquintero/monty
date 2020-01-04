@@ -8,11 +8,11 @@
 char **pharser(char *buffer)
 {
 	int i = 0;
-	char **token, *tok, *dup_token, *first_dup;
+	char **token, *tok, *dup, *first;
 
-	first_dup = strdup(buffer);
-	dup_token = strdup(buffer);
-	tok = strtok(first_dup, " \t\n $");
+	first = strdup(buffer);
+	dup = strdup(buffer);
+	tok = strtok(first, " \t\n $");
 	i++;
 	while (tok != NULL)
 	{
@@ -21,12 +21,12 @@ char **pharser(char *buffer)
 	}
 	token = malloc(sizeof(char *) * i);
 	i = 0;
-	token[i] = strtok(dup_token, " \t\n $");
+	token[i] = strtok(dup, " \t\n $");
 	while (token[i] != NULL)
 	{
 		i++;
 		token[i] = strtok(NULL, " \t\n $");
 	}
-	free(first_dup);
+	free(first);
 	return (token);
 }

@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- *
- *
- *
- *
+ * _pop - Funtionces of the opcode pop.
+ * @h: Stack.
+ * @count: count of the line where the opcode is taken.
+ * Return: Void.
  */
 void _pop(stack_t **h, unsigned int count)
 {
@@ -11,11 +11,11 @@ void _pop(stack_t **h, unsigned int count)
 
 	temp = *h;
 	if (temp == NULL)
-        {
-                dprintf(STDERR_FILENO,
-                        "L%u: can't pop, stack empty\n", count);
-                exit(EXIT_FAILURE);
-        }
+	{
+		dprintf(STDERR_FILENO,
+			"L%u: can't pop, stack empty\n", count);
+		exit(EXIT_FAILURE);
+	}
 	*h = temp->next;
 	if (temp->next)
 		temp->next->prev = NULL;

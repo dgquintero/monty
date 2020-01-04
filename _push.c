@@ -19,11 +19,18 @@ void _push(stack_t **h, unsigned int count)
 		fprintf(stderr, "L%u: usage: push integer\n", count);
 		exit(EXIT_FAILURE);
 	}
-
-	new->n = atoi(sup.num);
-	new->next = *h;
-	new->prev = NULL;
-	if (*h)
-		(*h)->prev = new;
-	*h = new;
+	if (sup.num)
+	{
+		new->n = atoi(sup.num);
+		new->next = *h;
+		new->prev = NULL;
+		if (*h)
+			(*h)->prev = new;
+		*h = new;
+	}
+	else
+	{dprintf(STDERR_FILENO, "L%u: usage: push integer\n", count);
+		free_stack((*h));
+		free(new);
+		exit(EXIT_FAILURE); }
 }

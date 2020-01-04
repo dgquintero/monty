@@ -29,8 +29,8 @@ void get_op_func(stack_t **h, unsigned int count, char *command)
 		i++;
 	}
 	if (op[i].f == NULL)
-	{
-		printf("L%d: unknown instruction %s\n", count, command);
+	{dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", count, command);
 		exit(EXIT_FAILURE);
 	}
+
 }

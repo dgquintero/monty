@@ -4,22 +4,25 @@
  *
  *
  */
-void (*get_op_func(char *s))(stack_t **h, unsigned int nn)
+void get_op_func(char *command, stack_t **stack, unsigned int count)
 {
-	int a = 0;
+	int i = 0;
 
-	(void) *s;
-	instruction_t ops[] = {
+	(void) stack;
+	(void) count;
+
+	instruction_t op[] = {
 		{"push", _push},
-/**		{"pall", _pall},
-		{"pint", _pint},*/
+		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
-	while (ops[a].opcode != NULL)
+
+	while (op[i].opcode != NULL)
 	{
-		if (strcmp(s, ops[a].opcode) == 0)
+		if (strcmp(command, op[i].opcode) == 0)
 			break;
-		a++;
+		i++;
 	}
-	return (ops[a].f);
+	exit(0);
 }

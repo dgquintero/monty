@@ -38,7 +38,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void (*get_op_func(char *s[]))(stack_t **h, unsigned int nn);
+void get_op_func(char *command, stack_t **stack, unsigned int count);
 void _push(stack_t **head, unsigned int n);
 void _pall(stack_t **h, unsigned int n);
 void _pint(stack_t **h, unsigned int n);

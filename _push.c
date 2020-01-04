@@ -14,12 +14,8 @@ void _push(stack_t **head, unsigned int count)
 {
 	stack_t *new;
 
-	if (head == NULL)
-	{dprintf(STDERR_FILENO, "L%d: error\n", count);
-		exit(EXIT_FAILURE);
-	}
-
 	new = malloc(sizeof(stack_t));
+	(void) count;
 	if (new == NULL)
 	{dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
@@ -28,7 +24,7 @@ void _push(stack_t **head, unsigned int count)
 	new->n = num;
 	new->next = *head;
 	new->prev = NULL;
-	if (*head != NULL)
+	if (*head)
 		(*head)->prev = new;
 	*head = new;
 }

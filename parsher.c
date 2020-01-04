@@ -7,22 +7,26 @@
  */
 char **pharser(char *buffer)
 {
-	char **token, *tok;
-	int i = 0, j = 0;
+	int i = 0;
+	char **token, *tok, *dup_token, *first_dup;
 
-	tok = strtok(buffer, " \t\n$");
+	first_dup = strdup(buffer);
+	dup_token = strdup(buffer);
+	tok = strtok(first_dup, " \t\n $");
+	i++;
 	while (tok != NULL)
 	{
-		tok = strtok(NULL, " \t\n$");
-		j++;
+		tok = strtok(NULL, " \t\n $");
+		i++;
 	}
-	j = j + 1;
-	token = malloc(sizeof(char *) * j);
-	token[i] = strtok(buffer, " \t\n$");
+	token = malloc(sizeof(char *) * i);
+	i = 0;
+	token[i] = strtok(dup_token, " \t\n $");
 	while (token[i] != NULL)
 	{
 		i++;
-		token[i] = strtok(NULL, " \t\n$");
+		token[i] = strtok(NULL, " \t\n $");
 	}
+	free(first_dup);
 	return (token);
 }

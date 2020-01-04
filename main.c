@@ -3,7 +3,7 @@ ss sup = {NULL, NULL, NULL};
 /**
  * main - Main funtion.
  * @argc: Argc.
- * @av: Argv.
+ * @argv: Argv.
  * Return: 0.
  */
 int main(int argc, char *argv[])

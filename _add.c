@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- *
- *
- *
- *
+ * _add - Funtionces of the opcode add.
+ * @h: Stack.
+ * @count: count of the line where the opcode is taken.
+ * Return: Void
  */
 void _add(stack_t **h, unsigned int count)
 {

@@ -27,7 +27,7 @@ int main(int argc, char *av[])
 	{
 		if (*buffer != '\n')
 		{
-			token = strtok(buffer, "\t\n\r");
+			token = strtok(buffer, " \t\n\r");
 			get_op_func(token, &head, count);
 		}
 		count++;

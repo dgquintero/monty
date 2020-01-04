@@ -28,7 +28,6 @@ int main(int argc, char *av[])
 		if (*buffer != '\n')
 		{
 			token = strtok(buffer, "\t\n\r");
-			printf("%s\n", token);
 			get_op_func(token, &head, count);
 		}
 		count++;

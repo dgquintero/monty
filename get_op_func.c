@@ -8,13 +8,8 @@ void get_op_func(char *command, stack_t **stack, unsigned int count)
 {
 	int i = 0;
 
-	(void) stack;
-	(void) count;
-
 	instruction_t op[] = {
 		{"push", _push},
-		{"pall", _pall},
-		{"pint", _pint},
 		{NULL, NULL}
 	};
 
@@ -24,5 +19,7 @@ void get_op_func(char *command, stack_t **stack, unsigned int count)
 			break;
 		i++;
 	}
+	(void) stack;
+	(void) count;
 	exit(0);
 }

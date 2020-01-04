@@ -10,6 +10,6 @@
  */
 void _nop(stack_t **h, unsigned int count)
 {
-	(void)h;
-	(void)linenumber;
+	(void) h;
+	(void) count;
 }

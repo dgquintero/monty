@@ -14,14 +14,7 @@ void _pall(stack_t **h, unsigned int count)
 
 	(void) count;
 
-	if (!h || !(*h))
-		return;
-
-	temp = *h;
-	while (temp->prev)
-		temp = temp->prev;
-	for (; temp->next; temp = temp->next)
+	temp = *stack;
+	for (; temp; temp = temp->next)
 		printf("%d\n", temp->n);
-
-	printf("%d\n", temp->n);
 }

@@ -14,11 +14,18 @@ void _push(stack_t **h, unsigned int count)
 	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+        {dprintf(STDERR_FILENO, "USAGE: monty file\n");
+                free_stack(new);
+                exit(EXIT_FAILURE); }
+
 	if (!sup.num && sup.num != 0)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", count);
+	{dprintf(STDERR_FILENO, "L%u: usage: push integer\n", count);
+		free_stack((*h));
+		free(new);
 		exit(EXIT_FAILURE);
 	}
+
 	if (sup.num)
 	{
 		new->n = atoi(sup.num);

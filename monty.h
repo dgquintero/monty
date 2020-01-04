@@ -45,5 +45,6 @@ void _pall(stack_t **h, unsigned int count);
 void _pint(stack_t **h, unsigned int count);
 void _nop(stack_t **h, unsigned int count);
 char **pharser(char *buffer);
+char *strcp(char *str);
 
 #endif /* _MONTY_H_ */

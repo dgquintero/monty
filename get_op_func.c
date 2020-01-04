@@ -12,7 +12,6 @@ void get_op_func(char *command, stack_t **h, unsigned int count)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
-		{"pop", _pop},
 		{"nop", _nop},
 		{NULL, NULL}
 	};

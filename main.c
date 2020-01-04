@@ -5,12 +5,12 @@
  * @av: Argv.
  * Return: 0.
  */
-int main(int argc, char *av[])
+int main(int argc, char *argv[])
 {
-	size_t bsize = 32;
+	size_t bsize = 0;
 	unsigned int count = 0;
 	FILE *one;
-	char *token = NULL, *buffer = NULL, *argv[32];
+	char *buffer = NULL, **token;
 	stack_t *head = NULL;
 
 	(void) head;
@@ -18,19 +18,43 @@ int main(int argc, char *av[])
 	{dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	one = fopen(av[1], "r");
+	one = fopen(argv[1], "r");
 	if (one == NULL)
 	{dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&buffer, &bsize, one) != -1)
 	{
-		if (*buffer != '\n')
-		{
-			token = strtok(buffer, " \t\n\r");
-			get_op_func(token, &head, count);
-		}
+		token = pharser(buffer);
+		get_op_func(token, &head, count);
 		count++;
 	}
+	fclose(one);
+	free(buffer);
 	return (0);
+}
+/**
+ *
+ *
+ */
+char **pharser(char *buffer)
+{
+	char **token, *tok;
+	int i = 0, j = 0;
+
+	tok = strtok(buffer, " \t\n$");
+	while (tok != NULL)
+	{
+		tok = strtok(NULL, " \t\n$");
+		j++;
+	}
+	j = j + 1;
+	token = malloc(sizeof(char *) * j);
+	token[i] = strtok(buffer, " \t\n$");
+	while (token[i] != NULL)
+	{
+		i++;
+		token[i] = strtok(NULL, " \t\n$");
+	}
+	return (token);
 }

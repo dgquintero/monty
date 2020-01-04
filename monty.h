@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define BSIZE 5084
+extern int num;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -38,10 +39,11 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void get_op_func(char *command, stack_t **h, unsigned int count);
+void get_op_func(char **command, stack_t **h, unsigned int count);
 void _push(stack_t **head, unsigned int count);
 void _pall(stack_t **h, unsigned int count);
 void _pint(stack_t **h, unsigned int count);
 void _nop(stack_t **h, unsigned int count);
+char **pharser(char *buffer);
 
 #endif /* _MONTY_H_ */

@@ -5,9 +5,11 @@
  * @h: h.
  * @count: count.
  */
-void get_op_func(char *command, stack_t **h, unsigned int count)
+void get_op_func(char **command, stack_t **h, unsigned int count)
 {
 	int i = 0;
+
+	printf("123\n");
 
 	instruction_t op[] = {
 		{"push", _push},
@@ -16,10 +18,12 @@ void get_op_func(char *command, stack_t **h, unsigned int count)
 		{"nop", _nop},
 		{NULL, NULL}
 	};
+	printf("123\n");
 	for (i = 0; op[i].opcode != NULL; i++)
 	{
-		if (strcmp(command, op[i].opcode) == 0)
+		if (strcmp(command[0], op[i].opcode) == 0)
 		{
+			num = atoi(command[1]);
 			op[i].f(h, count);
 			return;
 		}

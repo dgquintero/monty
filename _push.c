@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "monty.h"
+int num;
 /**
  * _push - adds a new node at the beginning
  * @head : const - list_t
@@ -12,7 +13,6 @@
 void _push(stack_t **head, unsigned int count)
 {
 	stack_t *new;
-	int nn = 5;
 
 	if (head == NULL)
 	{dprintf(STDERR_FILENO, "L%d: error\n", count);
@@ -25,7 +25,7 @@ void _push(stack_t **head, unsigned int count)
 		exit(EXIT_FAILURE);
 	}
 
-	new->n = nn;
+	new->n = num;
 	new->next = *head;
 	new->prev = NULL;
 	if (*head != NULL)

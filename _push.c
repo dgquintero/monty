@@ -3,11 +3,10 @@
 #include <stdio.h>
 #include "monty.h"
 /**
- * _push - adds a new node at the beginning
- * @head : const - list_t
- * @count: const int
- *
- * Return: the address of the new element.
+ * _push - Funtionces of the opcode push.
+ * @h: Stack.
+ * @count: count of the line where the opcode is taken.
+ * Return: Void
  */
 void _push(stack_t **h, unsigned int count)
 {
@@ -15,9 +14,9 @@ void _push(stack_t **h, unsigned int count)
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-        {dprintf(STDERR_FILENO, "USAGE: monty file\n");
-                free_stack(new);
-                exit(EXIT_FAILURE); }
+	{dprintf(STDERR_FILENO, "USAGE: monty file\n");
+		free_stack(new);
+		exit(EXIT_FAILURE); }
 
 	if (!sup.num && sup.num != 0)
 	{dprintf(STDERR_FILENO, "L%u: usage: push integer\n", count);

@@ -10,14 +10,12 @@
  */
 void _pint(stack_t **h, unsigned int count)
 {
+	stack_t *temp;
 
+	temp = *h;
 	if (h == NULL)
 	{dprintf(STDERR_FILENO, "L%d: error\n", count);
 		exit(EXIT_FAILURE);
-	}
-	while (*h != NULL)
-	{
-		*h = (*h)->next;
 	}
 	printf("%d\n", (*h)->n);
 }

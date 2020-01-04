@@ -17,5 +17,5 @@ void _pint(stack_t **h, unsigned int count)
 	{dprintf(STDERR_FILENO, "L%d: error\n", count);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*h)->n);
+	printf("%d\n", temp->n);
 }

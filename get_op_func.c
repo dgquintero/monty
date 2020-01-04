@@ -11,6 +11,9 @@ void get_op_func(char *command, stack_t **h, unsigned int count)
 	instruction_t op[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 	for (i = 0; op[i].opcode != NULL; i++)

@@ -7,7 +7,7 @@ push 5
 push 6
 pall
 pall
-push 11111
+push 123321
+push 876678
 add
 pall
-cuchufli

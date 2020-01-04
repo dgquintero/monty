@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
- * main - Main funtion.
- * @argc: Argc.
- * @av: Argv.
- * Return: 0.
+ * pharser - pharser to the buffer the comes from opcode-file.
+ * @buffer: The buffer with the imformation.
+ * @h: The stack
+ * @count: Count of the line where the opcode is taken.
+ * Return: Void.
  */
 
 void pharser(char *buffer, stack_t **h, unsigned int count)

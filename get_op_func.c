@@ -4,22 +4,22 @@
  *
  *
  */
-void get_op_func(char *command, stack_t **stack, unsigned int count)
+void get_op_func(char *command, stack_t **h, unsigned int count)
 {
 	int i = 0;
 
 	instruction_t op[] = {
 		{"push", _push},
+		{"pall", _pall},
 		{NULL, NULL}
 	};
-
-	while (op[i].opcode != NULL)
+	for (i = 0; op[i].opcode != NULL; i++)
 	{
 		if (strcmp(command, op[i].opcode) == 0)
-			break;
-		i++;
+		{
+			op[i].f(h, count);
+			return;
+		}
 	}
-	(void) stack;
-	(void) count;
-	exit(0);
+
 }

@@ -9,15 +9,16 @@
  *
  * Return: the number of notes.
  */
-void _pint(stack_t **h, unsigned int n)
+void _pint(stack_t **h, unsigned int count)
 {
-	size_t i = 0;
 
-	(void) n;
+	if (h == NULL)
+        {dprintf(STDERR_FILENO, "L%d: error\n", count);
+                exit(EXIT_FAILURE);
+        }
 	while (*h != NULL)
 	{
 		*h = (*h)->next;
-		i++;
 	}
-	printf("%d\n", h->n);
+	printf("%d\n", (*h)->n);
 }

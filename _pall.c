@@ -9,15 +9,17 @@
  *
  * Return: the number of notes.
  */
-void _pall(stack_t **h, unsigned int n)
+void _pall(stack_t **h, unsigned int count)
 {
-	size_t i = 0;
+	stack_t *temp = *h;
 
-
-	while (*h != NULL)
+	if (h == NULL)
+	{dprintf(STDERR_FILENO, "L%d: error\n", count);
+                exit(EXIT_FAILURE);
+        }
+	while (temp)
 	{
-		printf("%d\n", *h->n);
-		*h = (*h)->next;
-		i++;
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }

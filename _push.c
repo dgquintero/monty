@@ -34,15 +34,15 @@ void _push(stack_t **h, unsigned int count)
  */
 void free_stack(stack_t **h)
 {
-	stack_t *temp;
+	stack_t *head;
 
-	if (*h == NULL || h == NULL)
-		exit(EXIT_FAILURE);
-
-	while (h != NULL)
+	head = *h;
+	if (!head)
+		return;
+	while (head->next)
 	{
-		temp = (*h)->next;
-		free(temp);
-		*h = temp;
+		head = head->next;
+		free(head->prev);
 	}
+	free(head);
 }

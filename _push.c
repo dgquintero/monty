@@ -15,7 +15,6 @@ void _push(stack_t **h, unsigned int count)
 	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
-
 	(void) count;
 	if (!new)
 		return;
@@ -26,23 +25,4 @@ void _push(stack_t **h, unsigned int count)
 	if (*h)
 		(*h)->prev = new;
 	*h = new;
-}
-/**
- *free_stack - Funtion that frees a list.
- * @head: Head of the list.
- * Return: Void.
- */
-void free_stack(stack_t **h)
-{
-	stack_t *head;
-
-	head = *h;
-	if (!head)
-		return;
-	while (head->next)
-	{
-		head = head->next;
-		free(head->prev);
-	}
-	free(head);
 }

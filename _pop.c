@@ -11,11 +11,13 @@ void _pop(stack_t **h, unsigned int count)
 
 	temp = *h;
 	if (temp == NULL)
-	{
-		printf("L%d: can't pop an empty stack\n", count);
-		exit(EXIT_FAILURE);
-	}
-	temp = (*h)->next;
-	free(*h);
-	*h = temp;
+        {
+                dprintf(STDERR_FILENO,
+                        "L%u: can't pop, stack empty\n", count);
+                exit(EXIT_FAILURE);
+        }
+	*h = temp->next;
+	if (temp->next)
+		temp->next->prev = NULL;
+	free(temp);
 }

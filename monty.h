@@ -42,6 +42,7 @@ typedef struct instruction_s
 void get_op_func(char **command, stack_t **h, unsigned int count);
 void _push(stack_t **head, unsigned int count);
 void free_stack(stack_t **h);
+void _add(stack_t **h, unsigned int count);
 void _pall(stack_t **h, unsigned int count);
 void _pint(stack_t **h, unsigned int count);
 void _pop(stack_t **h, unsigned int count);

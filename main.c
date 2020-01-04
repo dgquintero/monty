@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	stack_t **head = NULL;
 
 	head = malloc(sizeof(stack_t));
-	*head = '\0';
+	*head = NULL;
 	if (argc != 2)
 	{dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);

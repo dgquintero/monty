@@ -7,8 +7,8 @@
  */
 void _swap(stack_t **h, unsigned int count)
 {
-	stack_t *two, *one, *tmp;
-	int i = 0;
+	stack_t *two;
+	int i = 0, temp;
 
 	two = (*h);
 
@@ -22,19 +22,8 @@ void _swap(stack_t **h, unsigned int count)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
 		exit(EXIT_FAILURE);
         }
-	one = two->prev;
-//	tmp->prev = two->prov;
-//	two->prev = one->prev;
-//	two->next = one->next;
-	tmp = one;
-	one->next = NULL;
-	one->prev = two;
-	two->next = one;
-	two->prev = tmp->prev;
-//	one->prev = tmp->prev;
-//	one->next = tmp->next;
-//	node->prev = (*h)->next;
-	free(*h);
-	node->prev = NULL;
-	(*h) = node;
+
+	temp = (*h)->n;
+	(*h)->n = (*h)->next->n;
+	(*h)->next->n = temp;
 }

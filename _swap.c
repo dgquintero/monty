@@ -23,18 +23,10 @@ void _swap(stack_t **h, unsigned int count)
 		exit(EXIT_FAILURE);
         }
 	one = two->prev;
-//	tmp->prev = two->prov;
-//	two->prev = one->prev;
-//	two->next = one->next;
 	tmp = one;
 	one->next = NULL;
 	one->prev = two;
 	two->next = one;
 	two->prev = tmp->prev;
-//	one->prev = tmp->prev;
-//	one->next = tmp->next;
-//	node->prev = (*h)->next;
 	free(*h);
-	node->prev = NULL;
-	(*h) = node;
 }

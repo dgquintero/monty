@@ -21,7 +21,7 @@ void _swap(stack_t **h, unsigned int count)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
 		exit(EXIT_FAILURE);
-        }
+	}
 
 	temp = (*h)->n;
 	(*h)->n = (*h)->next->n;

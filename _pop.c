@@ -12,7 +12,7 @@ void _pop(stack_t **h, unsigned int count)
 	temp = *h;
 	if (temp == NULL)
 	{
-		dprintf(STDERR_FILENO,"L%u: can't pop an empty stack\n", count);
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", count);
 		exit(EXIT_FAILURE);
 	}
 	*h = temp->next;

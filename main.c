@@ -18,6 +18,10 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	sup.file = fopen(argv[1], "r");
+	if (!is_amonty_file(argv[1]))
+	{dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
+                exit(EXIT_FAILURE);
+        }
 	if (!sup.file)
 	{dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
@@ -29,4 +33,14 @@ int main(int argc, char *argv[])
 	}
 	free_stack(head);
 	exit(EXIT_SUCCESS);
+}
+int is_amonty_file(char *filename)
+{
+        int len = strlen(filename);
+
+        len--;
+	printf("asd");
+        if (filename[len - 1] == '.' && filename[len] == 'm')
+                return (1);
+        return (0);
 }

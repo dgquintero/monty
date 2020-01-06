@@ -70,4 +70,5 @@ void _swap(stack_t **h, unsigned int count);
 void _sub(stack_t **h, unsigned int count);
 void _div(stack_t **h, unsigned int count);
 void _mul(stack_t **h, unsigned int count);
+int is_amonty_file(char *filename);
 #endif /* _MONTY_H_ */

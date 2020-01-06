@@ -34,13 +34,3 @@ int main(int argc, char *argv[])
 	free_stack(head);
 	exit(EXIT_SUCCESS);
 }
-int is_amonty_file(char *filename)
-{
-        int len = strlen(filename);
-
-        len--;
-	printf("asd");
-        if (filename[len - 1] == '.' && filename[len] == 'm')
-                return (1);
-        return (0);
-}

@@ -1,4 +1,4 @@
-#include "monty.h"
+B#include "monty.h"
 /**
  * _pop - Funtionces of the opcode pop.
  * @h: Stack.
@@ -13,7 +13,6 @@ void _pop(stack_t **h, unsigned int count)
 	if (temp == NULL)
 	{
 		dprintf(STDERR_FILENO,"L%u: can't pop an empty stack\n", count);
-		
 		exit(EXIT_FAILURE);
 	}
 	*h = temp->next;

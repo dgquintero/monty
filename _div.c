@@ -22,7 +22,7 @@ void _div(stack_t **h, unsigned int count)
 		fprintf(stderr, "L%d: can't div, stack too short\n", count);
 		exit(EXIT_FAILURE);
 	}
-	if (node->n == 0)
+	if ((*node)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", count);
 		exit(EXIT_FAILURE);

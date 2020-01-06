@@ -1,4 +1,4 @@
-B#include "monty.h"
+#include "monty.h"
 /**
  * _pop - Funtionces of the opcode pop.
  * @h: Stack.

@@ -20,6 +20,7 @@ void get_op_func(stack_t **h, unsigned int count, char *command)
 		{"sub", _sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 

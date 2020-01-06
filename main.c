@@ -9,7 +9,7 @@ ss sup = {NULL, NULL, NULL};
 int main(int argc, char *argv[])
 {
 	ssize_t chr;
-	size_t bsize = 0;
+	size_t bsize = 32;
 	unsigned int count = 0;
 	stack_t *head = NULL;
 

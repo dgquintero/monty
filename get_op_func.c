@@ -34,6 +34,7 @@ void get_op_func(stack_t **h, unsigned int count, char *command)
 	}
 	if (op[i].f == NULL)
 	{dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", count, command);
+		free_stack((*h));
 		exit(EXIT_FAILURE);
 	}
 

@@ -68,5 +68,5 @@ void _pop(stack_t **h, unsigned int count);
 void _nop(stack_t **h, unsigned int count);
 void _swap(stack_t **h, unsigned int count);
 void _sub(stack_t **h, unsigned int count);
-
+void _div(stack_t **h, unsigned int count);
 #endif /* _MONTY_H_ */

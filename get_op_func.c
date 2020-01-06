@@ -12,11 +12,11 @@ void get_op_func(stack_t **h, unsigned int count, char *command)
 	instruction_t op[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pint", _pint},
 		{"pop", _pop},
+		{"pint", _pint},
+		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
-		{"swap", _swap},
 		{"sub", _sub},
 		{"div", _div},
 		{NULL, NULL}
